@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(45deg, #40E0D0, #32CD32, #FF6347, #FFD700, #FFA500);
+    background-size: 600% 600%;
+    animation: gradientAnimation 30s ease infinite;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    min-height: 100vh;
+    overflow-y: auto; /* Enable vertical scrolling */
+    transition: background 3s ease;
+    padding: 20px;
+}
+
+h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    text-align: center; /* Center align the heading */
+}
+
+#quiz {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the quiz container */
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Left-align items within the question */
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    width: 100%; /* Make width responsive */
+    text-align: left; /* Left-align text */
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.question img {
+    margin-bottom: 20px;
+    width: 100%; /* Make width responsive */
+    max-height: 300px; /* Set max height */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    object-fit: contain; /* Scale image instead of cropping */
+}
+
+.question p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.option button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px; /* Reduce spacing between buttons */
+    font-size: 1em;
+    color: #fff;
+    background: #40E0D0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.option button:hover {
+    background: #32CD32;
+}
+
+.option button:active, .option button.selected {
+    background: #FF6347;
+    transform: scale(0.95);
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    height: 100%; /* Take full height */
+    width: 100%; /* Make width responsive */
+    max-width: 600px; /* Limit maximum width */
+    text-align: center;
+    opacity: 0;
+    transition: opacity 2s ease;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Add a background for better readability */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow */
+    font-size: 1.5em; /* Increase font size */
+    color: #333; /* Ensure text color is readable */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #ff3b30;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
